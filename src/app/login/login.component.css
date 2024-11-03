@@ -1,0 +1,18 @@
+.panel-content {    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28vw;
+    background: rgb(255, 255, 255);
+    padding: 20px 10px;
+    box-shadow: 1px 1px 9px 3px;
+}
+.loginForm .form-group {
+    padding-bottom: 5px;
+}
+.login-content {
+    background-color: #5dabef;
+    height: 100vh;
+    width: 100%;
+}

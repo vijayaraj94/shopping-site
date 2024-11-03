@@ -1,0 +1,26 @@
+<div class="page-container">
+    <h3>User Details</h3>
+    <div class="mb-5">
+        <button type="button" class="btn btn-sm btn-primary float-end" (click)="logOut()">Logout</button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+          <tr class="theading">
+            <th scope="col">S.No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userList; let index = index">
+            <th scope="row">{{index + 1}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.address}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

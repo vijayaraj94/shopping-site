@@ -1,0 +1,55 @@
+<div class="shopping-page">
+    <div class="header">
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand">Shopping Site</a>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" (click)="showProduct('Home')">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Category
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" (click)="showProduct('Mobile')">Mobile</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" (click)="showProduct('Laptop')">Laptop</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" (click)="showProduct('Sports')">Sports</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">Contact</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <button class="btn btn-success btn-sm" type="button" (click)="gotoCart(cartItem)">Cart <span class="badge badge-primary">{{cartItem?.length || 0}}</span></button> &nbsp;
+                  <button class="btn btn-danger btn-sm" type="button" (click)="logOut()">Logout</button>
+                </form>
+              </div>
+            </div>
+        </nav>
+    </div>
+    <div class="shopping-body-content">
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let item of availableProduct; let i = index">
+                <div class="card">
+                    <div class="item_image">
+                        <img src="{{item.image}}" class="card-img-top" alt="image" width="300" height="250">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.name}} - {{item.price | currency : 'INR'}}</h5>
+                      <p class="card-text">{{item.info}}</p>
+                      <div class="d-flx">
+                        <button type="button" class="btn btn-primary btn-sm float-start" [disabled]="!item.enabled" (click)="addToCart(item, i)">Add to cart</button>
+                        <button type="button" class="btn btn-warning btn-sm float-end">Buy Now</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

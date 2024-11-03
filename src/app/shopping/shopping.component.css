@@ -1,0 +1,16 @@
+.shopping-page a{
+    color: #fff;
+}
+
+.dropdown-menu a {
+    color: black;
+}
+.shopping-body-content {
+    padding: 15px;
+}
+.card {
+    margin: 5px;
+}
+.navbar-nav a, .nav-item a {
+    cursor: pointer;
+}
